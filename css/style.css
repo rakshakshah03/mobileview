@@ -1,0 +1,163 @@
+#skip{
+    background-color: black;
+    position: absolute;
+    left: -500px;
+    color: white;
+}
+
+#skip:focus{
+    left: 200px;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 80%;
+}
+
+nav{
+    background-color: black;
+    color: whitesmoke;
+    display: grid;
+    padding: 10% 0% 0% 10%;
+    font-size: 140%;
+    font-style: oblique;
+    font-family: 'palatino', sans-serif;
+}
+
+nav>ul>li{
+    padding-bottom: 10%;
+}
+
+div{
+    padding: 3% 3% 2% 5%;
+}
+
+h1,h2{
+    font-family: 'palatino', sans-serif;
+    text-align: center;
+    padding: 8% 3% 0% 3%;
+}
+
+h1{
+    font-size: 180%;
+    font-style:italic;
+    padding-bottom: 5%;
+}
+h2{
+    font-size: 140%;
+}
+
+h3{
+    font-size: 140%;
+    text-align: center;
+    padding: 5% 3% 2% 5%;
+}
+
+figcaption{
+    padding: 1% 5% 3% 5%;  
+    text-align: center;
+}
+
+figure{
+    padding:0% 5%;
+}
+
+img,video{
+    display: flex;
+    margin-left:auto;
+    margin-right: auto;
+    padding: 5%;
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 8/9;
+}
+
+#current{
+    text-decoration: underline;
+    text-decoration-color: white;
+
+}
+
+ul{
+    list-style-type: circle;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+
+ol {
+counter-reset: mycounter 0; /* whenever we see `<ol>`, `mycounter` is set to 2 */
+padding-left: 2%;
+padding-right: 2%
+}
+
+
+ol>li::before {
+counter-increment: mycounter; /* whenever we see <li>, we increment `mycounter` by 1 */
+content: counter(mycounter) ". "; /* and display it before the <li> */
+}
+
+span{
+    display: inline-block;
+}
+
+
+nav>ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+.collage {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+  }
+.smallbox{
+    display:grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+}
+
+
+@keyframes scroll{
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.35);
+        background-color: whitesmoke;
+    }
+}
+
+figure:active{
+    animation-name: scroll;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+
+}
+
+@media only screen and (min-width:768px){
+    body{
+        font-size: 140%;
+    }
+}
+
+@media (prefers-reduced-motion) {
+    #swissgif{
+        content: url("../images/HikingSwissAlps.jpeg");
+    }
+    #seoulgif{
+        content: url("../images/seoul1.jpg");
+    }
+    #nycgif{
+        content: url("../images/newyorkcity_nongif.jpeg");
+    }
+    #barcagif{
+        content: url("../images/Barcelona_SagradaFamilia.jpg")
+    }
+    figure:active{
+        animation: none;
+    }
+
+  }
